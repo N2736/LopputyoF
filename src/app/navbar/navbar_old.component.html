@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#/">Opiskelijarekisteri</a>
+    </div>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" routerLink="/sivu1">Opiskelijat</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/sivu2">Admin</a></li>
+            <li *ngIf="!login" class="nav-item"><a class="nav-link" routerLink="/sivu3">Login</a></li>
+            <li *ngIf="login" class="nav-item"><a class="nav-link" routerLink="/sivu3" (click)="doLogout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>

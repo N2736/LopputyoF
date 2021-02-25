@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/tarvikef",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

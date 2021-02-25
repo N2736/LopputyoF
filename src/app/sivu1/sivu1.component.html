@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-bordered table-sm">
+            <tbody>
+                <ng-container *ngFor="let group of ryhmat">
+                    <tr>
+                        <td>
+                            <h3>{{group.ryhmacode}}</h3>
+                        </td>
+                        <td>
+                            <h3>{{group.name}}</h3>
+                        </td>
+                    </tr>
+                    <tr *ngFor="let item of tuotteet">
+                        <ng-container *ngIf="item.ryhmacode === group.ryhmacode">
+                            <td></td>
+                            <td>{{item.tuotecode}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.tuoteinfo}}</td>
+                        </ng-container>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- 
+<div class="container-fluid">
+    <div class="d-flex mt-3 mb-3">Ryhmä</div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Nimi</th>
+                    <th>Tuote</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of ryhmat">
+                    <td>{{s.ryhmacode}}</td>
+                    <td>{{s.name}}</td>
+                    <td>{{s.tuote}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<table>
+     <ng-container *ngFor="let group of groups">
+         <tr><td><h2>{{group.name}}</h2></td></tr>
+         <tr *ngFor="let item of group.items"><td>{{item}}</td></tr>
+     </ng-container>
+</table>
+-->

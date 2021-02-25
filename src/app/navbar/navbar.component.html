@@ -1,0 +1,22 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/sivu1" [routerLinkActive]="['is-active']">Luettelo</a>
+            <a mat-list-item routerLink="/sivu2" [routerLinkActive]="['is-active']">Uusi/muutos</a>
+            <!-- <a mat-list-item href="/sivu3">Login</a> -->
+            <a *ngIf="!login" mat-list-item routerLink="/sivu3" [routerLinkActive]="['is-active']">Login</a>
+            <a *ngIf="login" mat-list-item routerLink="/sivu3" [routerLinkActive]="['is-active']" (click)="doLogout()">Logout</a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+            <span>Sähkötarvikkeet</span>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
